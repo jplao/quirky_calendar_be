@@ -23,4 +23,4 @@ Things you may want to cover:
 
 * ...
 
-!(Schema)[Schema.png]
+![Schema](Schema.png)
