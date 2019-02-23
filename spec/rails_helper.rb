@@ -56,3 +56,7 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+def stub_web_cal_request
+  stub_request(:get, "http://www.webcal.fi/cal.php?id=50&format=json&start_year=current_year&end_year=next_year&tz=America%2FDenver").to_return(body: File.read("./spec/fixtures/webcal_request.json"))
+end
