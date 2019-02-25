@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get 'holidays', to: 'holidays#show'
       get 'search', to: 'search#show'
+      post '/users', to: 'users#create'
     end
   end
 end
