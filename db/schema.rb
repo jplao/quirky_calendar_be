@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_25_171340) do
+ActiveRecord::Schema.define(version: 2019_02_25_210545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "holiday_id"
+    t.index ["holiday_id"], name: "index_favorites_on_holiday_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
 
   create_table "holidays", force: :cascade do |t|
     t.datetime "date"
@@ -27,4 +34,6 @@ ActiveRecord::Schema.define(version: 2019_02_25_171340) do
     t.string "password_digest"
   end
 
+  add_foreign_key "favorites", "holidays"
+  add_foreign_key "favorites", "users"
 end
