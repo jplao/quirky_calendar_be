@@ -7,6 +7,10 @@ describe User, type: :model do
     it {should validate_presence_of(:password)}
   end
 
+  describe 'relationships' do
+    it {should have_many(:favorites)}
+  end
+
   describe 'instance methods' do
     it 'generates api key on create' do
       params = {

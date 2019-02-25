@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       get 'search', to: 'search#show'
       post '/users', to: 'users#create'
       post '/sessions', to: 'sessions#create'
+      get 'favorites', to: 'favorites#show'
+      post 'favorites', to: 'favorites#create'
     end
   end
 end
