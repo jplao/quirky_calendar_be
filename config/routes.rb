@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       get 'holidays', to: 'holidays#show'
       get 'search', to: 'search#show'
       post '/users', to: 'users#create'
+      post '/sessions', to: 'sessions#create'
     end
   end
 end
